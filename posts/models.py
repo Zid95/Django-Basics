@@ -9,7 +9,7 @@ class Post(models.Model):
     content = models.TextField(max_length=10000)
     image = models.ImageField(upload_to='posts/', default='default.png')
     author = models.ForeignKey(
-        User, related_name='post_author', on_delete=models.SET_DEFAULT)
+        User, related_name='post_author', on_delete=models.CASCADE)
     tags = TaggableManager()
 
     def __str__(self):
