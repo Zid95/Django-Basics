@@ -5,4 +5,8 @@ from .models import Post
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        exclude = ('author',)
+        fields = ['title']
+
+        widgets = {
+            'title': forms.TextInput(attrs={'class': 'form'}),
+        }

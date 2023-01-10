@@ -22,7 +22,7 @@ from posts.views import post_list, post_detail, create_post, edit_post, delete_p
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
-    path('blog/', post_list),
+    path('', post_list),
     path('blog/<int:id>', post_detail),
     path('blog/create', create_post),
     path('blog/<int:id>/edit', edit_post),

@@ -20,7 +20,7 @@ def create_post(request):
             myform = form.save(commit=False)
             myform.author = request.user
             myform.save()
-            return redirect('/blog')
+            return redirect('/')
 
     else:
         form = PostForm()
@@ -36,7 +36,7 @@ def edit_post(request, id):
             myform = form.save(commit=False)
             myform.author = request.user
             myform.save()
-            return redirect('/blog')
+            return redirect('/')
     else:
         form = PostForm(instance=post)
     return render(request, 'edit.html', {'form': form})
@@ -45,4 +45,4 @@ def edit_post(request, id):
 def delete_post(request, id):
     post = Post.objects.get(id=id)
     post.delete()
-    return redirect('/blog')
+    return redirect('/')
