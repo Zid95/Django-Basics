@@ -1,3 +1,3 @@
-# Django-Basics-Project
+# Django-Basics
 
 
